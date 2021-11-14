@@ -411,6 +411,10 @@ body {
   border: 2px solid var(--c-cyan);
 }
 
+#invoice-total.error {
+  border: 2px solid red;
+}
+
 #people-total {
   padding: 15px;
   border-radius: 10px;
@@ -422,6 +426,15 @@ body {
 
 #people-total:hover {
   border: 2px solid var(--c-cyan);
+}
+
+#people-total.error {
+  border: 2px solid red;
+}
+
+#name-hint-text {
+  color: red;
+  text-align: right;
 }
 
 .wrap {

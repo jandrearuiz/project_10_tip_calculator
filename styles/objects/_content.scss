@@ -20,6 +20,10 @@
   &:hover {
     border: 2px solid var(--c-cyan);
   }
+
+  &.error {
+    border: 2px solid red;
+  }
 }
 
 #people-total {
@@ -33,4 +37,14 @@
   &:hover {
     border: 2px solid var(--c-cyan);
   }
+
+  &.error {
+    border: 2px solid red;
+  }
 }
+
+#name-hint-text {
+  color: red;
+  text-align: right;
+}
+

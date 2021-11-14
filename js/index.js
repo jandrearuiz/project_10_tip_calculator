@@ -12,18 +12,17 @@ const calculateTip = (percentage) => {
   let totalTip = 0;
 
   if (!invoiceTotal.value) {
-    alert('Value is empty')
-    return
+    alert("Value is empty");
+    return;
   }
 
   if (!peopleTotal.value) {
-    alert('Number People is empty')
-    return
+    alert("Number People is empty");
+    return;
   }
 
   if (!!invoiceTotal.value && !!peopleTotal.value) {
-    totalTip =
-      ((+percentage / 100) * invoiceTotal.value) / peopleTotal.value;
+    totalTip = ((+percentage / 100) * invoiceTotal.value) / peopleTotal.value;
 
     totalForPerson = invoiceTotal.value / peopleTotal.value + totalTip;
   }
@@ -32,8 +31,8 @@ const calculateTip = (percentage) => {
   tipTotalPerson.innerText = `$ ${totalForPerson.toFixed(2)}`;
 };
 
-const handleClick = btn => {
-  calculateTip(btn.dataset.percent); 
+const handleClick = (btn) => {
+  calculateTip(btn.dataset.percent);
 };
 
 const tipCustom = () => {
@@ -47,11 +46,36 @@ const reset = () => {
   tipTotalPerson.innerText = "$ 0";
 };
 
+const validPeople = () => {
+ 
+  const nameHintText = document.getElementById("name-hint-text");
+
+  if (+peopleTotal.value === 0){
+
+    if (!nameHintText) {
+      peopleTotal.classList.add("error");
+      peopleTotal.insertAdjacentHTML(
+        "afterend",
+        '<div id="name-hint-text" class="hint">El campo no es válido</div>'
+      );
+    }
+  } else {
+    peopleTotal.classList.remove("error");
+
+    if (nameHintText) {
+      nameHintText.remove();
+    }
+  }
+};
+
 tipBtns.forEach((btn) => {
   btn.addEventListener("click", handleClick.bind(null, btn));
 });
 btnReset.addEventListener("click", reset);
-['change','keyup'].forEach( e => 
+["change", "keyup"].forEach((e) =>
   customPercent.addEventListener(e, tipCustom)
+);
+["change", "keyup"].forEach((e) =>
+  peopleTotal.addEventListener(e, validPeople)
 );
 
