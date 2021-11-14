@@ -7,5 +7,9 @@ body {
   background: var(--c-lightgrayishcyan);
   color: var(--c-gray);
   font-size: 14px;
-  height: 100vh;
+  margin: auto;
+
+  @media (min-width: $medium) {
+    height: 100vh;
+  }
 }

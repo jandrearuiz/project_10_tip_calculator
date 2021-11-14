@@ -371,7 +371,13 @@ body {
   background: var(--c-lightgrayishcyan);
   color: var(--c-gray);
   font-size: 14px;
-  height: 100vh;
+  margin: auto;
+}
+
+@media (min-width: 1200px) {
+  body {
+    height: 100vh;
+  }
 }
 
 .content {
@@ -549,7 +555,13 @@ body {
   color: var(--c-lightgrayishcyan);
   text-align: center;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+}
+
+@media (min-width: 1200px) {
+  .tip {
+    font-size: 1.5rem;
+  }
 }
 
 #custom {
