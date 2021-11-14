@@ -1,0 +1,18 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: 90%;
+  justify-content: space-between;
+  background: var(--c-white);
+  border-radius: 25px;
+
+  @media (min-width: $medium) {
+    flex-direction: row;
+    width: 50%;
+  }
+}
+
+.title {
+  color: var(--c-verydarkcyan);
+}

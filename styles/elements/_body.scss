@@ -1,0 +1,11 @@
+body {
+  font-family: var(--f-font), monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--c-lightgrayishcyan);
+  color: var(--c-gray);
+  font-size: 14px;
+  height: 100vh;
+}

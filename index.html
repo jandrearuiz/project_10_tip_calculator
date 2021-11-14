@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splitter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+  <body>
+    <h1 class="title">SPLITTER</h1>
+    <div class="wrap">
+      <div class="content">
+        <h2 class="content__title">Bill</h2>
+        <input type="number" id="invoice-total" placeholder="0" min="1"/>
+        <h2 class="content__title">Select Tip %</h2>
+        <div class="tips">
+          <div class="tip" data-percent="5">5%</div>
+          <div class="tip" data-percent="10">10%</div>
+          <div class="tip" data-percent="15">15%</div>
+          <div class="tip" data-percent="25">25%</div>
+          <div class="tip" data-percent="50">50%</div>
+          <input type="number" id="custom" placeholder="Custom" min="1"/>
+        </div>
+        <h2 class="content__title">Number of People</h2>
+        <input type="number" id="people-total" placeholder="0" min="1"/>
+      </div>
+      <div class="container">
+        <div class="result">
+          <p class="result__total">
+            Tip Amount <span class="result__person">/ person</span>
+          </p>
+          <span id="total-amount">$ 0</span>
+        </div>
+        <div class="result">
+          <p class="result__total">
+            Total <span class="result__person">/ person</span>
+          </p>
+          <span id="total-person">$ 0</span>
+        </div>
+        <button id="reset" type="button">RESET</button>
+      </div>
+    </div>
+    <script src="./js/index.js" defer></script>
+  </body>
+</html>

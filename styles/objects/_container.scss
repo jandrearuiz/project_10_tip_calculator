@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--c-verydarkcyan);
+  margin: 20px 30px;
+  border-radius: 25px;
+  padding-bottom: 30px;
+
+  @media (min-width: $medium) {
+    width: 40%;
+    padding-bottom: 0;
+    margin: 30px;
+  }
+}

@@ -1,0 +1,33 @@
+.result {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+
+  &__total {
+    color: var(--c-white);
+  }
+
+  &__person {
+    display: block;
+    color: var(--c-darkgrayiscyano);
+  }
+}
+
+#total-amount {
+  color: var(--c-cyan);
+  font-size: 1.7rem;
+
+  @media (min-width: $medium) {
+    font-size: 2.5rem;
+  }
+}
+
+#total-person {
+  font-size: 1.7rem;
+  color: var(--c-cyan);
+
+  @media (min-width: $medium) {
+    font-size: 2.5rem;
+  }
+}

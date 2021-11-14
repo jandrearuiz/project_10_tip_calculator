@@ -1,0 +1,23 @@
+.tip {
+  padding: 15px 30px;
+  margin: 4px;
+  width: 15%;
+  background: var(--c-verydarkcyan);
+  border: 1px solid var(--c-verydarkcyan);
+  border-radius: 10px;
+  color: var(--c-lightgrayishcyan);
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+#custom {
+  width: 15%;
+  padding: 15px 30px;
+  margin: 4px;
+  border: 1px solid var(--c-verydarkcyan);
+  border-radius: 10px;
+  font-family: var(--f-font), mono;
+  text-align: center;
+  color: var(--c-verydarkcyan);
+}
