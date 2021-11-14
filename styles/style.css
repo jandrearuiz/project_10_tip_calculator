@@ -411,10 +411,6 @@ body {
   border: 2px solid var(--c-cyan);
 }
 
-#invoice-total.error {
-  border: 2px solid red;
-}
-
 #people-total {
   padding: 15px;
   border-radius: 10px;
@@ -569,6 +565,13 @@ body {
   text-align: center;
   font-weight: 700;
   font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.tip:hover {
+  background: var(--c-cyan);
+  border: 1px solid var(--c-cyan);
+  color: var(--c-verydarkcyan);
 }
 
 @media (min-width: 1200px) {
@@ -588,6 +591,10 @@ body {
   color: var(--c-verydarkcyan);
 }
 
+#custom:hover {
+  border: 1px solid var(--c-cyan);
+}
+
 #reset {
   width: 80%;
   padding: 15px;
@@ -597,5 +604,11 @@ body {
   background: var(--c-cyan);
   font-weight: 800;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#reset:hover {
+  background: var(--c-lightgrayishcyan);
+  border: 1px solid var(--c-lightgrayishcyan);
 }
 /*# sourceMappingURL=style.css.map */
