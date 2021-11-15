@@ -11,6 +11,8 @@ const calculateTip = (percentage) => {
   let totalForPerson = 0;
   let totalTip = 0;
 
+  removeActiveClass();
+
   if (!invoiceTotal.value) {
     alert("Value is empty");
     return;
@@ -31,8 +33,17 @@ const calculateTip = (percentage) => {
   tipTotalPerson.innerText = `$ ${totalForPerson.toFixed(2)}`;
 };
 
+const removeActiveClass = () => {
+  for (let element of tipBtns) {
+    if (element.className.includes("active")) {
+      element.classList.remove("active");
+    }
+  }
+};
+
 const handleClick = (btn) => {
   calculateTip(btn.dataset.percent);
+  btn.classList.toggle("active");
 };
 
 const tipCustom = () => {
@@ -40,30 +51,29 @@ const tipCustom = () => {
 };
 
 const reset = () => {
+  removeActiveClass();
   invoiceTotal.value = "0";
-  peopleTotal.value = "1";
+  peopleTotal.value = "0";
   tipTotalAmount.innerText = "$ 0";
   tipTotalPerson.innerText = "$ 0";
 };
 
-const validPeople = () => {
- 
-  const nameHintText = document.getElementById("name-hint-text");
+const validTotal = (element) => {
+  const hintText = document.getElementById(`${element.id}-hint-text`);
 
-  if (+peopleTotal.value === 0){
-
-    if (!nameHintText) {
-      peopleTotal.classList.add("error");
-      peopleTotal.insertAdjacentHTML(
+  if (+element.value === 0) {
+    if (!hintText) {
+      element.classList.add("error");
+      element.insertAdjacentHTML(
         "afterend",
-        '<div id="name-hint-text" class="hint">El campo no es válido</div>'
+        `<div id="${element.id}-hint-text" class="hint-text">El campo no es válido</div>`
       );
     }
   } else {
-    peopleTotal.classList.remove("error");
+    element.classList.remove("error");
 
-    if (nameHintText) {
-      nameHintText.remove();
+    if (hintText) {
+      hintText.remove();
     }
   }
 };
@@ -75,7 +85,7 @@ btnReset.addEventListener("click", reset);
 ["change", "keyup"].forEach((e) =>
   customPercent.addEventListener(e, tipCustom)
 );
-["change", "keyup"].forEach((e) =>
-  peopleTotal.addEventListener(e, validPeople)
-);
-
+["change", "keyup"].forEach((e) => {
+  peopleTotal.addEventListener(e, validTotal.bind(null, peopleTotal));
+  invoiceTotal.addEventListener(e, validTotal.bind(null, invoiceTotal));
+});

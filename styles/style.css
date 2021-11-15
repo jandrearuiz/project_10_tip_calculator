@@ -398,7 +398,7 @@ body {
   }
 }
 
-#invoice-total {
+.invoice-total {
   padding: 15px;
   border-radius: 10px;
   border: 2px solid transparent;
@@ -407,11 +407,11 @@ body {
   font-size: 1.5rem;
 }
 
-#invoice-total:hover {
+.invoice-total:hover {
   border: 2px solid var(--c-cyan);
 }
 
-#people-total {
+.people-total {
   padding: 15px;
   border-radius: 10px;
   border: 2px solid transparent;
@@ -420,15 +420,11 @@ body {
   text-align: right;
 }
 
-#people-total:hover {
+.people-total:hover {
   border: 2px solid var(--c-cyan);
 }
 
-#people-total.error {
-  border: 2px solid red;
-}
-
-#name-hint-text {
+.hint-text {
   color: red;
   text-align: right;
 }
@@ -574,13 +570,19 @@ body {
   color: var(--c-verydarkcyan);
 }
 
+.tip.active {
+  background: var(--c-darkgrayiscyano);
+  border: 1px solid var(--c-darkgrayiscyano);
+  color: var(--c-verydarkcyan);
+}
+
 @media (min-width: 1200px) {
   .tip {
     font-size: 1.5rem;
   }
 }
 
-#custom {
+.custom {
   width: 15%;
   padding: 15px 30px;
   margin: 4px;
@@ -591,7 +593,7 @@ body {
   color: var(--c-verydarkcyan);
 }
 
-#custom:hover {
+.custom:hover {
   border: 1px solid var(--c-cyan);
 }
 
@@ -610,5 +612,9 @@ body {
 #reset:hover {
   background: var(--c-lightgrayishcyan);
   border: 1px solid var(--c-lightgrayishcyan);
+}
+
+.error {
+  border: 2px solid red;
 }
 /*# sourceMappingURL=style.css.map */

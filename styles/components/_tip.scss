@@ -17,12 +17,18 @@
     color: var(--c-verydarkcyan);
   }
 
+  &.active {
+    background: var(--c-darkgrayiscyano);
+    border: 1px solid var(--c-darkgrayiscyano);
+    color: var(--c-verydarkcyan);
+  }
+
   @media (min-width: $medium) {
     font-size: 1.5rem;
   }
 }
 
-#custom {
+.custom {
   width: 15%;
   padding: 15px 30px;
   margin: 4px;
