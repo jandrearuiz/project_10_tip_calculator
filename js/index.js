@@ -13,12 +13,12 @@ const calculateTip = (percentage) => {
 
   removeActiveClass();
 
-  if (!invoiceTotal.value || (+invoiceTotal.value === 0)) {
+  if (!invoiceTotal.value || +invoiceTotal.value === 0) {
     alert("Value is empty o 0 ");
     return;
   }
 
-  if (!peopleTotal.value || (+peopleTotal.value === 0)) {
+  if (!peopleTotal.value || +peopleTotal.value === 0) {
     alert("Number People is empty o 0");
     return;
   }
@@ -43,6 +43,15 @@ const removeActiveClass = () => {
 
 const handleClick = (btn) => {
   calculateTip(btn.dataset.percent);
+
+  if (!invoiceTotal.value || +invoiceTotal.value === 0) {
+    return;
+  }
+
+  if (!peopleTotal.value || +peopleTotal.value === 0) {
+    return;
+  }
+
   btn.classList.toggle("active");
 };
 
@@ -52,8 +61,9 @@ const tipCustom = () => {
 
 const reset = () => {
   removeActiveClass();
-  invoiceTotal.value = "0";
-  peopleTotal.value = "0";
+  invoiceTotal.value = 0;
+  peopleTotal.value = 0;
+  customPercent.value = null;
   tipTotalAmount.innerText = "$ 0";
   tipTotalPerson.innerText = "$ 0";
   [invoiceTotal, peopleTotal].forEach((e) => {
