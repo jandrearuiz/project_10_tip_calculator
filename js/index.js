@@ -13,13 +13,13 @@ const calculateTip = (percentage) => {
 
   removeActiveClass();
 
-  if (!invoiceTotal.value) {
-    alert("Value is empty");
+  if (!invoiceTotal.value || (+invoiceTotal.value === 0)) {
+    alert("Value is empty o 0 ");
     return;
   }
 
-  if (!peopleTotal.value) {
-    alert("Number People is empty");
+  if (!peopleTotal.value || (+peopleTotal.value === 0)) {
+    alert("Number People is empty o 0");
     return;
   }
 
