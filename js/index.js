@@ -56,6 +56,15 @@ const reset = () => {
   peopleTotal.value = "0";
   tipTotalAmount.innerText = "$ 0";
   tipTotalPerson.innerText = "$ 0";
+  [invoiceTotal, peopleTotal].forEach((e) => {
+    const element = document.getElementById(`${e.id}-hint-text`);
+
+    if (element) {
+      element.remove();
+    }
+
+    e.classList.remove("error");
+  });
 };
 
 const validTotal = (element) => {
